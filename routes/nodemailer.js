@@ -45,7 +45,7 @@ async function mailer(email, userID){
  to: email,
  subject: "Account Verification Required",
  text: "Account Verification",
- html: 'We have recently implemented enhanced security measures to ensure the safety and privacy of our users. As part of this process, we require all users to verify their accounts to maintain uninterrupted access. To complete the verification process, Press the below verify button. <br> <h4><a href="http://localhost:3000/verify/'+userID+'">verify</a></h4>'
+ html: 'We have recently implemented enhanced security measures to ensure the safety and privacy of our users. As part of this process, we require all users to verify their accounts to maintain uninterrupted access. To complete the verification process, Press the below verify button. <br> <h4><a href="https://amazonclone-webproject.onrender.com/verify/'+userID+'">verify</a></h4>'
  }
 
 
