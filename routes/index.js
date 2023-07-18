@@ -255,14 +255,14 @@ res.render("home", {count, usernameLimit, productTypeOne, productTypeTwo, produc
 router.get('/sendmail', async function(req, res, next){
   try{
     let user = await userModel.findOne({ email: req.session.passport.user });
-    if(user){
+    if(user.verified === false){
       const userEmail = user.email;
       const userID = user._id;
 
       await mailer(userEmail, userID);
       res.send("Mail Sent to Your Email")
     }else{
-      res.send("User not found!")
+      res.send("You Already Verified!")
     }
 
   }catch(error){
@@ -270,6 +270,7 @@ router.get('/sendmail', async function(req, res, next){
   }
 
  })
+
 
 
 
