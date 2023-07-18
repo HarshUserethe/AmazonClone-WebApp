@@ -1,0 +1,83 @@
+<% include ./Partials/header.ejs %>
+<title>Your Orders</title>
+<link rel="stylesheet" href="/stylesheets/allProducts.css">
+
+
+<style>
+    .order1{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .ordered-item{
+        width: 90vw;
+        height: 12vh;
+        border: 1px solid #000000c2;
+        background-color: #ffffffec;
+        border-radius: 7px;
+        margin-top: 3vh;
+        display: flex;
+        align-items: center;
+       
+    }
+    .item-img{
+       width:  4.5vw;
+       height: 4.5vw;
+     background-color: red;
+        border-radius: 7px;
+        margin-left: .5vw;
+    }
+    .item-img>img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 7px;
+    }
+    .item-info{
+        position: relative;
+        margin-left: 2vw;
+         
+    }
+    .name>h5{
+        font-family: "bookfive";
+        font-size: 1.7vw;
+        margin-top: 1vh;
+        font-weight: 600;
+    }
+    .price>h6{
+        font-family: "bookone";
+        font-size: 1.5vw;
+        margin-top: -1vh;
+    }
+    .time{
+   position: absolute;
+   margin-top: -9vh;
+   margin-left: 40vw;
+   width: 20vw;
+   color: green;
+  
+    }
+    #userDets{
+    position: absolute;
+    right: 9vw;
+    margin-top: 3vh;
+    cursor: pointer;
+    }
+</style>
+
+<% productId.forEach(function(item){ %>
+    <div class="order1">
+        <div class="ordered-item">
+            <div class="item-img">
+                <img src="<%= item.pimage %>" alt="">
+            </div>
+            <div class="item-info">
+                <div class="name"><h5><%= item.pname %></h5></div>
+                <div class="price"><h6>₹<%= item.price %></h6></div>
+                <div class="time"><span><%= item.createdAt %></span></div>
+            </div>
+        </div>
+        <a href="/user-information/<%= item.userid %>" id="userDets">user info</a>
+    </div> 
+<% }) %>

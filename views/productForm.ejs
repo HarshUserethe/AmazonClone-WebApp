@@ -1,0 +1,90 @@
+<% include ./Partials/header.ejs %>
+<title>Create Product</title>
+<link rel="stylesheet" href="/stylesheets/style.css">
+
+<style>
+    .product-form-body{
+        width: 100vw;
+        height: calc(100vh - 16.5vh);
+        position: absolute;
+        top:16.5vh;
+        display: flex;
+        background-color: #F7F7F7;
+    }
+    .containerOne{
+        width: 60vw;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .containerTwo{
+        width: 40vw;
+        height: 100%;
+        background-color: #F7F7F7;
+    }
+    .form-label{
+        font-family: "bookone"; 
+     
+    }
+    .form-control{
+       
+        width: 40vw !important;
+    }
+
+</style>
+
+<div class="product-form-body">
+    <div class="containerOne">
+        <form action="/create/product" method="post">
+            <div class="mb-3 crtProductInput">
+              <label for="exampleInputEmail1" class="form-label">Product Name</label>
+              <input type="text" name="pname" maxlength="55" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+
+            <div class="mb-3 crtProductInput">
+                <label for="exampleFormControlTextarea1" class="form-label">Product Description</label>
+                <textarea class="form-control" name="pdesc" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+
+            <div class="mb-3 crtProductInput">
+                <label for="exampleInputPassword1" class="form-label">Product Price</label>
+                <input type="text" name="price" class="form-control priceInp" id="exampleInputPassword1" oninput="addCommas(this)" onkeydown="return event.key >= '0' && event.key <= '9' || event.key === 'Backspace' || event.key === 'Delete'">
+            </div>
+
+            <select class="form-select drpp" aria-label="Default select example" name="ptype">
+                <option selected>Select Category of Your Product</option>
+                <option value="1">Top Deals</option>
+                <option value="2">Daily Deals</option>
+                <option value="3">Other Products</option>
+              </select>
+
+            <div class="mb-3 crtProductInput">
+                <label for="exampleInputPassword1" class="form-label">Product Image</label>
+                <input type="url" name="pimage" class="form-control" id="exampleInputPassword1">
+            </div>
+    
+            <button type="submit" class="btn submitBtn" style="cursor: pointer;">Create a product</button>
+          </form>
+    </div>
+    <div class="containerTwo"></div>
+</div>
+
+<script>
+    var priceInput = document.querySelector(".priceInp");
+    
+    function addCommas(input) {
+      // Remove existing commas
+      var value = input.value.replace(/,/g, '');
+      
+      // Remove non-digit characters
+      value = value.replace(/\D/g, '');
+      
+      // Add commas every three digits
+      value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      
+      // Update the input field value
+      input.value = value;
+    }
+</script>

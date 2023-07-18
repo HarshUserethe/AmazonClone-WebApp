@@ -1,0 +1,40 @@
+<% include ./Partials/header.ejs %>
+<title>Create Product</title>
+<link rel="stylesheet" href="/stylesheets/allProducts.css">
+<link rel="stylesheet" href="/stylesheets/productBuy.css">
+
+<div class="mp">
+    <div class="top-area">
+        <div class="productImage"><img src="<%=product.pimage%>" alt=""></div>
+        <div class="product-info">
+            <div class="product-name"><%=product.pname%></div>
+            <div class="product-price">₹<%=product.price%></div>
+            <div class="product-note">We want to assure you that any changes in price will be communicated transparently and prominently. If a price adjustment is necessary, we will provide clear information at the point of purchase or during the checkout process </div>
+            <div class="product-Offers">
+                <div class="cards">
+                    <h5>No Cost EMI</h5>
+                    <span>Amazon Pay LaterUpto ₹3,212.97 EMI interest savings</span>
+                </div>
+                <div class="cards">
+                    <h5>Credit Card</h5>
+                    <span>Use personal credit card, and get upto ₹5000 discount</span>
+                </div>
+                <div class="cards">
+                    <h5>Bank Offer</h5>
+                    <span>Time limited deal, use your bank to purchase</span>
+                </div>
+               
+            </div>
+            <div class="buttons-btn">
+                <button><a href="/addtocart/<%=product._id%>" style="color: #000;">Add Cart</a></button>
+                <button>Whishlist</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-description">
+        <div class="product-desc">
+            <%=product.pdesc%>
+        </div>
+    </div>
+</div>

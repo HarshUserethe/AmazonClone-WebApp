@@ -1,0 +1,37 @@
+<% include ./Partials/header.ejs %>
+<title>Create Product</title>
+<link rel="stylesheet" href="/stylesheets/allProducts.css">
+
+<div class="allproducts">
+
+   <% AllProducts.forEach(function(item){ %>
+    <div class="myProduct">
+        <div class="productImg">
+            <img src="<%=item.pimage%>" alt="Product Image">
+        </div>
+        <div class="productInfo">
+            <span class="myProductName"><%=item.pname%></span> <br>
+            <span class="myProductDesc">₹<%=item.price%></span>
+        </div>
+        <div class="myProductBtn">
+            <a href="/edit-product/<%=item._id%>" class="icn2"><i class="ri-pencil-fill"></i></a>
+           <a href="/delete/<%=item._id%>" class="icn1"> <i class="ri-delete-bin-fill"></i></a>
+        </div>
+    </div>
+   <% }) %>
+
+<!-- <div class="myProduct">
+    <div class="productImg">
+        <img src="" alt="">
+    </div>
+    <div class="productInfo">
+        <span class="myProductName">Headphones</span> <br>
+        <span class="myProductDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span>
+    </div>
+    <div class="myProductBtn">
+        <i class="ri-pencil-fill"></i>
+        <i class="ri-delete-bin-fill"></i>
+    </div>
+</div> -->
+
+</div>

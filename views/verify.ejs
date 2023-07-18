@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>amazon clone demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+  <body>
+    <style>
+        body{
+            background-color: #dfdfdf48;
+        }
+.ilt{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 40%;
+    right: 6vw;
+    height: 70%;
+}
+.ilt>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+button{
+    margin-bottom: 20vw;
+}
+.red{
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: red;
+}
+.redimp{
+   border-color: red;
+}
+    </style>
+
+<div class="container-2" style="position: absolute; left: 6vw; top: 8vh; width: 45%;">
+    <form action="/verified" method="post">
+       <h2>Verify Now !</h2>
+       <hr>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Full Name</label>
+        <input name="name" type="text" class="form-control" id="exampleInputEmail1" value="<%=user.name%>" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Username</label>
+        <input name="username" type="text" class="form-control" id="exampleInputEmail1" value="<%=user.username%>" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input name="email" type="email" class="form-control" id="exampleInputEmail1" value="<%=user.email%>" aria-describedby="emailHelp">
+      </div>
+      <!-- <select class="form-select" aria-label="Default select example" name="isSeller" >
+        <option selected>Choose account type</option>
+        <option selected="<%= user.isSeller %> === true ? true : false"  value="true">Seller</option>
+        <option selected="<%= user.isSeller %>" value="false">Customer</option>
+      </select> -->
+      <div class="mb-3">
+        <label for="exampleInputPassword1"  class="<%=user.contactnumber.length === 0  ? 'red' : ' ' %> form-label">Contact</label>
+        <input name="contactnumber" type="number" class="<%=user.contactnumber.length === 0 ? 'redimp' : ' ' %> form-control " id="exampleInputPassword1" value="<%=user.contactnumber%>">
+      </div>
+     
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1"  class="<%=user.gstin.length === 0  ? 'red' : ' ' %> form-label">GSTIN</label>
+        <input name="gstin" type="text" class="<%=user.contactnumber.length === 0 ? 'redimp' : ' ' %> form-control " id="exampleInputPassword1" value="<%=user.gstin%>">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1"  class="<%=user.address.length === 0  ? 'red' : ' ' %> form-label">Address</label>
+        <input name="address" type="text" class="<%=user.contactnumber.length === 0 ? 'redimp' : ' ' %> form-control" id="exampleInputPassword1" value="<%=user.address%>">
+      </div>
+
+      <button type="submit" class="btn btn-primary mt-1 mb-5" >Verify</button>
+
+  </form>
+  </div>
+
+  <div class="ilt">
+<img src="/images/bouncy-security-with-fingerprint-verification.svg" alt="verified image">
+  </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>

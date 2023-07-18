@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+.allproducts{
+    position: absolute;
+    width: 100%;
+    min-height: 85vh;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+   
+}
+
+.myProduct{
+    width: 18vw;
+    height: 23vw;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 4.5vw;
+    box-shadow: 1px 1px 5px #00000028;
+}
+
+.productImg{
+    width: 95%;
+    height: 60%;
+    background-color: #000;
+    border-radius: 2px;
+}
+.productImg>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    object-fit: cover;
+}
+.productInfo{
+    width: 95%;
+    height: 25%;
+    margin-left: 15px;
+}
+
+.myProductBtn{
+    width: 95%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+
+}
+
+.myProductName{
+    font-size: 1.2vw;
+    font-family: "booktwo";
+    line-height: 0vh !important;
+    position: relative;
+    top: 4vh;
+    font-weight: 500;
+    
+}
+.myProductDesc{
+    font-size: 1.7vw;
+    position: relative;
+    font-family: "booktwo";
+    font-weight: 600;
+    color: maroon;
+    top: 9vh;
+}
+
+.myProductBtn>a{
+    font-size: 1.8vw;
+    position: relative;
+    left: 60%;
+    margin-right: 1vw;
+    text-decoration: none;
+}
+.myProductBtn>.icn2{
+    background-color: rgb(255, 230, 0);
+    padding: 10px;
+    height:2.7vw;
+    width: 2.7vw;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px #0000003d;
+}
+
+.myProductBtn>.icn1{
+    background-color: rgba(255, 38, 0, 0.932);
+    padding: 10px;
+    height:2.7vw;
+    width: 2.7vw;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px #0000003d;
+}
+
+.myProductBtn>i:hover{
+    transform: scale(1.05);
+}
+.myProductrupee{
+    font-size: 1.1vw;
+    color: #000;
+    font-family: "booktwo";
+}
