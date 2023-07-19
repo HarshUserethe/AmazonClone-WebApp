@@ -211,7 +211,7 @@ document.getElementById('rzp-button1').onclick = async function(e){
     // Retrieve the value of "final" from the data attribute
     var final = document.getElementById('rzp-button1').getAttribute('data-final');
 
-    let response = await fetch("http://localhost:3000/payment", {
+    let response = await fetch("https://amazonclone-webproject.onrender.com/payment", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
