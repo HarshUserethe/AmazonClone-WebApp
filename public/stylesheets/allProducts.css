@@ -35,7 +35,7 @@ html, body{
 .productImg{
     width: 95%;
     height: 60%;
-    background-color: #000;
+  
     border-radius: 2px;
 }
 .productImg>img{
