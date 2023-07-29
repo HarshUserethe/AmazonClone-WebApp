@@ -26,6 +26,7 @@ router.use(cors());
 // router.use(bodyparser.urlencoded({extended: false}));
 router.use(bodyParser.json());
 router.use(flash());
+require('dotenv').config();
 
 //cart items
 var cartItems = [];
@@ -42,8 +43,8 @@ const Razorpay = require("razorpay");
 
 
 var instance = new Razorpay({
-  key_id: 'rzp_test_PCIwXguS5ffBCG',
-  key_secret: 'NbuBBPdNMiBejAITkjNeVHds',
+  key_id: process.env.KEY_ID,
+  key_secret: process.env.KEY_SECRET,
 });
 
 
@@ -56,7 +57,7 @@ router.use("/payment", async (req, res, next) => {
   // let {amount} = req.body;
 try{
   
-  var instance = new Razorpay({ key_id: 'rzp_test_PCIwXguS5ffBCG', key_secret: 'NbuBBPdNMiBejAITkjNeVHds' })
+  var instance = new Razorpay({ key_id: process.env.KEY_ID, key_secret: process.env.KEY_SECRET })
  
   var order = await instance.orders.create({
     amount: req.body.amount,  // amount in the smallest currency unit
@@ -270,7 +271,6 @@ router.get('/sendmail', async function(req, res, next){
   }
 
  })
-
 
 
 
